@@ -1,0 +1,49 @@
+/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
+/* wallust template - nordic colors-rofi */
+
+* {
+    active-background: #88C0D0;
+    active-foreground: #ECEFF4;
+    normal-background: #2E3440;
+    normal-foreground: #D8DEE9;
+    urgent-background: #5E81AC;
+    urgent-foreground: #ECEFF4;
+
+    alternate-active-background: #5E81AC;
+    alternate-active-foreground: #ECEFF4;
+    alternate-normal-background: #3B4252;
+    alternate-normal-foreground: #D8DEE9;
+    alternate-urgent-background: #2E3440;
+    alternate-urgent-foreground: #ECEFF4;
+
+    selected-active-background: #5E81AC;
+    selected-active-foreground: #ECEFF4;
+    selected-normal-background: #88C0D0;
+    selected-normal-foreground: #2E3440;
+    selected-urgent-background: #5E81AC;
+    selected-urgent-foreground: #ECEFF4;
+
+    background-color: #2E3440;
+    background: rgba(46,52,64,0.9);
+    foreground: #D8DEE9;
+    border-color: #88C0D0;
+
+    
+    color0:  #2E3440;  /* dark base */
+    color1:  #3B4252;  /* slightly lighter base */
+    color2:  #434C5E;  /* mid dark */
+    color3:  #4C566A;  /* border gray-blue */
+    color4:  #D8DEE9;  /* light gray */
+    color5:  #E5E9F0;  /* snow storm 1 */
+    color6:  #ECEFF4;  /* snow storm 2 */
+    color7:  #8FBCBB;  /* frost teal */
+    color8:  #88C0D0;  /* frost cyan */
+    color9:  #81A1C1;  /* frost blue */
+    color10: #5E81AC;  /* deep nord blue */
+    color11: #6A95B9;  /* softer blue accent */
+    color12: #7DAEC7;  /* icy blue */
+    color13: #9ACFE3;  /* pale arctic blue */
+    color14: #A7D1DD;  /* frosty aqua */
+    color15: #C0E7F2;  /* light ice highlight */
+
+}
