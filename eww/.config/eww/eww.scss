@@ -1,0 +1,81 @@
+/* ~/.config/eww/eww.scss */
+
+* {
+  all: unset;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+}
+
+.cheatsheet-container {
+  background-color: rgba(30, 30, 46, 0.95);
+  border: 2px solid rgba(137, 180, 250, 0.3);
+  border-radius: 12px;
+  padding: 20px;
+  color: #cdd6f4;
+}
+
+.header {
+  border-bottom: 2px solid rgba(137, 180, 250, 0.3);
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #89b4fa;
+}
+
+.subtitle {
+  font-size: 12px;
+  color: #a6adc8;
+  margin-top: 5px;
+}
+
+.section {
+  background-color: rgba(49, 50, 68, 0.6);
+  border-radius: 8px;
+  padding: 15px;
+  border-left: 4px solid #89b4fa;
+}
+
+.section.custom {
+  border-left-color: #a6e3a1;
+  background-color: rgba(166, 227, 161, 0.1);
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #89b4fa;
+  margin-bottom: 10px;
+}
+
+.section.custom .section-title {
+  color: #a6e3a1;
+}
+
+.shortcut {
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(69, 71, 90, 0.5);
+}
+
+.shortcut:last-child {
+  border-bottom: none;
+}
+
+.key {
+  background-color: rgba(137, 180, 250, 0.2);
+  color: #89b4fa;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: bold;
+  border: 1px solid rgba(137, 180, 250, 0.3);
+  min-width: 180px;
+}
+
+.description {
+  color: #cdd6f4;
+  font-size: 12px;
+  margin-left: 12px;
+}

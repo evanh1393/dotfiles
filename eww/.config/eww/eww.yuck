@@ -1,0 +1,90 @@
+;; ~/.config/eww/eww.yuck
+
+(defwindow cheatsheet
+  :monitor 0
+  :geometry (geometry :x "50%"
+                      :y "50%"
+                      :width "600px"
+                      :height "700px"
+                      :anchor "center")
+  :stacking "overlay"
+  :reserve (struts :distance "0px" :side "top")
+  :windowtype "dialog"
+  :wm-ignore false
+  (cheatsheet-widget))
+
+(defwidget cheatsheet-widget []
+  (box :class "cheatsheet-container"
+       :orientation "vertical"
+       :space-evenly false
+       :spacing 20
+    (box :class "header"
+         :orientation "vertical"
+         :spacing 5
+      (label :class "title" :text "Hyprland Shortcuts")
+      (label :class "subtitle" :text "Press ESC or Super+H to close"))
+    
+    (scroll :height 600
+      (box :orientation "vertical"
+           :spacing 15
+        
+        ;; Window Management Section
+        (box :class "section"
+             :orientation "vertical"
+             :spacing 8
+          (label :class "section-title" :text "🪟 Window Management")
+          (shortcut-item :key "Super + Q" :desc "Close window")
+          (shortcut-item :key "Super + V" :desc "Toggle floating")
+          (shortcut-item :key "Super + F" :desc "Toggle fullscreen")
+          (shortcut-item :key "Super + ←/→/↑/↓" :desc "Move focus")
+          (shortcut-item :key "Super + Shift + ←/→/↑/↓" :desc "Move window")
+          (shortcut-item :key "Super + Mouse" :desc "Drag/resize window"))
+        
+        ;; Applications Section
+        (box :class "section"
+             :orientation "vertical"
+             :spacing 8
+          (label :class "section-title" :text "🚀 Applications")
+          (shortcut-item :key "Super + Return" :desc "Terminal (Ghostty)")
+          (shortcut-item :key "Super + D" :desc "App launcher (Wofi)")
+          (shortcut-item :key "Super + E" :desc "File manager (Dolphin)")
+          (shortcut-item :key "Super + B" :desc "Web browser (Firefox)"))
+        
+        ;; Workspaces Section
+        (box :class "section"
+             :orientation "vertical"
+             :spacing 8
+          (label :class "section-title" :text "📋 Workspaces")
+          (shortcut-item :key "Super + 1-10" :desc "Switch to workspace")
+          (shortcut-item :key "Super + Shift + 1-10" :desc "Move window to workspace")
+          (shortcut-item :key "Super + Tab" :desc "Next workspace")
+          (shortcut-item :key "Super + Shift + Tab" :desc "Previous workspace"))
+        
+        ;; System Section
+        (box :class "section"
+             :orientation "vertical"
+             :spacing 8
+          (label :class "section-title" :text "⚙️ System")
+          (shortcut-item :key "Super + Shift + R" :desc "Reload Hyprland")
+          (shortcut-item :key "Super + Shift + Q" :desc "Quit Hyprland")
+          (shortcut-item :key "Super + L" :desc "Lock screen"))
+        
+        ;; Custom Fish Commands Section
+        (box :class "section custom"
+             :orientation "vertical"
+             :spacing 8
+          (label :class "section-title" :text "🐟 Fish Commands")
+          (shortcut-item :key "nixedit" :desc "Edit NixOS config")
+          (shortcut-item :key "nixrebuild" :desc "Rebuild system")
+          (shortcut-item :key "nixupdate" :desc "Edit & rebuild")
+          (shortcut-item :key "nixgen" :desc "List generations")
+          (shortcut-item :key "nixrollback" :desc "Rollback system"))))))
+
+(defwidget shortcut-item [key desc]
+  (box :class "shortcut"
+       :orientation "horizontal"
+       :space-evenly false
+       :spacing 12
+    (label :class "key" :text key :halign "start")
+    (label :class "description" :text desc :halign "start" :hexpand true)))
+
