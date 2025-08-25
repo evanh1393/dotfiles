@@ -10,3 +10,19 @@ end
 if command -v starship >/dev/null
     starship init fish | source
 end
+
+function workon
+    if test (count $argv) -eq 0
+        echo "Usage: workon <env_name>"
+        return 1
+    end
+
+    set venv_path "$argv[1]/bin/activate.fish"
+
+    if test -f $venv_path
+        source $venv_path
+        echo "Activated virtual environment: $argv[1]"
+    else
+        echo "No virtual environment found at $argv[1]"
+    end
+end

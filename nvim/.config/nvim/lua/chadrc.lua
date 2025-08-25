@@ -2,7 +2,7 @@
 local M = {}
 
 M.base46 = {
-    theme = "nord",
+    theme = "tokyonight",
     hl_override = {
         Normal = { bg = "none" },
         NormalFloat = { bg = "none" },
