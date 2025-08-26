@@ -10,6 +10,8 @@ local options = {
         blade = { "prettier" }, -- Blade support via plugin
         sh = { "shfmt" },
         bash = { "shfmt" },
+        dockerfile = { "lsp" },
+        yaml = { "prettier" },
     },
     format_on_save = {
         timeout_ms = 500,
