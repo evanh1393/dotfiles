@@ -49,8 +49,6 @@ lspconfig.ts_ls.setup {
     on_attach = enhanced_on_attach,
     on_init = on_init,
     capabilities = capabilities,
-    cmd = { "/run/current-system/sw/bin/typescript-language-server", "--stdio" },
-    filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue" },
 }
 
 -- Python LSP (you have python-lsp-server, not pyright)
