@@ -1,3 +1,5 @@
+print "=== LOADING CUSTOM LSP CONFIG ===" -- Add this at the top
+
 local on_attach = require("nvchad.configs.lspconfig").on_attach
 local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
@@ -42,11 +44,13 @@ lspconfig.intelephense.setup {
     },
 }
 
--- TypeScript/JavaScript LSP
-lspconfig.tsserver.setup {
+-- JS/TS
+lspconfig.ts_ls.setup {
     on_attach = enhanced_on_attach,
     on_init = on_init,
     capabilities = capabilities,
+    cmd = { "/run/current-system/sw/bin/typescript-language-server", "--stdio" },
+    filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue" },
 }
 
 -- Python LSP (you have python-lsp-server, not pyright)
@@ -122,4 +126,12 @@ lspconfig.yamlls.setup {
     on_attach = enhanced_on_attach,
     on_init = on_init,
     capabilities = capabilities,
+}
+
+-- Fish LSP
+lspconfig.fish_lsp.setup {
+    on_attach = enhanced_on_attach,
+    on_init = on_init,
+    capabilities = capabilities,
+    filetypes = { "fish" },
 }

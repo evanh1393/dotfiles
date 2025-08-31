@@ -1,16 +1,17 @@
 return {
     {
         "stevearc/conform.nvim",
-        -- event = 'BufWritePre', -- uncomment for format on save
         opts = require "configs.conform",
     },
+
     {
         "neovim/nvim-lspconfig",
         config = function()
-            require "configs.lspconfig"
+            require "nvchad.configs.lspconfig" -- load NvChad defaults
+            require "custom.configs.lspconfig" -- load your overrides
         end,
     },
-    -- Add spell checking
+
     {
         "davidmh/cspell.nvim",
         enabled = false,
@@ -21,6 +22,7 @@ return {
             }
         end,
     },
+
     {
         "nvimtools/none-ls.nvim",
         event = "VeryLazy",
