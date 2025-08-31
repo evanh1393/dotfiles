@@ -1,17 +1,15 @@
--- Fix annoying diagnostics
 vim.diagnostic.config {
     virtual_text = {
-        severity = vim.diagnostic.severity.ERROR, -- Only show errors
+        severity = { min = vim.diagnostic.severity.ERROR }, -- only show errors inline
     },
     signs = {
-        severity = vim.diagnostic.severity.ERROR, -- Only show error signs
+        severity = { min = vim.diagnostic.severity.ERROR }, -- only error signs
     },
     underline = {
-        severity = vim.diagnostic.severity.ERROR, -- Only underline errors
+        severity = { min = vim.diagnostic.severity.ERROR }, -- only underline errors
     },
     update_in_insert = false, -- Don't show diagnostics while typing
     severity_sort = true,
 }
 
--- Enable system clipboard
 vim.opt.clipboard = "unnamedplus"
