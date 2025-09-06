@@ -1,49 +1,44 @@
-/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
-/* wallust template - nordic colors-rofi */
-
+/* ---- 💫 Tokyo Night Theme Colors 💫 ---- */
+/* wallust template - tokyo night colors-rofi */
 * {
-    active-background: #88C0D0;
-    active-foreground: #ECEFF4;
-    normal-background: #2E3440;
-    normal-foreground: #D8DEE9;
-    urgent-background: #5E81AC;
-    urgent-foreground: #ECEFF4;
-
-    alternate-active-background: #5E81AC;
-    alternate-active-foreground: #ECEFF4;
-    alternate-normal-background: #3B4252;
-    alternate-normal-foreground: #D8DEE9;
-    alternate-urgent-background: #2E3440;
-    alternate-urgent-foreground: #ECEFF4;
-
-    selected-active-background: #5E81AC;
-    selected-active-foreground: #ECEFF4;
-    selected-normal-background: #88C0D0;
-    selected-normal-foreground: #2E3440;
-    selected-urgent-background: #5E81AC;
-    selected-urgent-foreground: #ECEFF4;
-
-    background-color: #2E3440;
-    background: rgba(46,52,64,0.9);
-    foreground: #D8DEE9;
-    border-color: #88C0D0;
-
+    active-background: #bb9af7;
+    active-foreground: #1a1b26;
+    normal-background: #1a1b26;
+    normal-foreground: #c0caf5;
+    urgent-background: #f7768e;
+    urgent-foreground: #1a1b26;
+    alternate-active-background: #bb9af7;
+    alternate-active-foreground: #1a1b26;
+    alternate-normal-background: #24283b;
+    alternate-normal-foreground: #c0caf5;
+    alternate-urgent-background: #1a1b26;
+    alternate-urgent-foreground: #f7768e;
+    selected-active-background: #bb9af7;
+    selected-active-foreground: #1a1b26;
+    selected-normal-background: #7aa2f7;
+    selected-normal-foreground: #1a1b26;
+    selected-urgent-background: #f7768e;
+    selected-urgent-foreground: #1a1b26;
+    background-color: #1a1b26;
+    background: rgba(26,27,38,0.9);
+    foreground: #c0caf5;
+    border-color: #7aa2f7;
     
-    color0:  #2E3440;  /* dark base */
-    color1:  #3B4252;  /* slightly lighter base */
-    color2:  #434C5E;  /* mid dark */
-    color3:  #4C566A;  /* border gray-blue */
-    color4:  #D8DEE9;  /* light gray */
-    color5:  #E5E9F0;  /* snow storm 1 */
-    color6:  #ECEFF4;  /* snow storm 2 */
-    color7:  #8FBCBB;  /* frost teal */
-    color8:  #88C0D0;  /* frost cyan */
-    color9:  #81A1C1;  /* frost blue */
-    color10: #5E81AC;  /* deep nord blue */
-    color11: #6A95B9;  /* softer blue accent */
-    color12: #7DAEC7;  /* icy blue */
-    color13: #9ACFE3;  /* pale arctic blue */
-    color14: #A7D1DD;  /* frosty aqua */
-    color15: #C0E7F2;  /* light ice highlight */
-
+    /* Tokyo Night Color Palette */
+    color0:  #1a1b26;  /* main background */
+    color1:  #24283b;  /* alt background */
+    color2:  #414868;  /* border/inactive */
+    color3:  #565f89;  /* comment/disabled */
+    color4:  #c0caf5;  /* foreground */
+    color5:  #a9b1d6;  /* muted foreground */
+    color6:  #9aa5ce;  /* darker foreground */
+    color7:  #7dcfff;  /* cyan */
+    color8:  #7aa2f7;  /* blue */
+    color9:  #bb9af7;  /* purple */
+    color10: #9ece6a;  /* green */
+    color11: #e0af68;  /* yellow */
+    color12: #ff9e64;  /* orange */
+    color13: #f7768e;  /* red */
+    color14: #73daca;  /* teal */
+    color15: #b4f9f8;  /* light cyan */
 }

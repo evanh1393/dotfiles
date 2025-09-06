@@ -4,11 +4,12 @@
     min-height: 0;
     font-family: JetBrainsMono Nerd Font;
     font-size: 13px;
+    color: #c0caf5;
 }
 
 window#waybar {
     background-color: #1a1b26;
-    opacity: 1;
+    opacity: 0.75;
     transition-property: background-color;
     transition-duration: 0.5s;
 }

@@ -1,15 +1,15 @@
-/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
-/* KooL Hyprland Rofi Style 6 */
+/* ---- 💫 Tokyo Night Rofi Theme 💫 ---- */
+/* Based on KooL Hyprland Rofi Style 6 */
 
 /* ---- Configuration ---- */
 
 configuration {
 	modi:                       "drun,run,filebrowser";
     show-icons:                 true;
-    display-drun:               "  apps";
-    display-run:                "  term";
-    display-filebrowser:        "  files";
-    display-window:             "  window";
+    display-drun:               "  apps";
+    display-run:                "  term";
+    display-filebrowser:        "  files";
+    display-window:             "  window";
 	drun-display-format:        "{name}";
 	hover-select:               true;
 	me-select-entry:            "MouseSecondary";
@@ -20,15 +20,27 @@ configuration {
 /* ---- Load wallust colors ---- */
 @theme "~/.config/rofi/wallust/colors-rofi.rasi"
 
-/* ---- Global Properties ---- */
+/* ---- Global Properties - Tokyo Night Colors ---- */
 * {
-
-    background-alt:              #007A7A;
-    selected:                    #5E81AC;
-    active:                      #5E81AC;
-    urgent:                      #99FFFF;
-
-    text-selected:               #FFFFFF;
+    /* Tokyo Night Color Palette */
+    background:                  #1a1b26;
+    background-alt:              #24283b;
+    foreground:                  #c0caf5;
+    selected:                    #7aa2f7;
+    active:                      #bb9af7;
+    urgent:                      #f7768e;
+    
+    /* Accent colors */
+    blue:                        #7aa2f7;
+    cyan:                        #7dcfff;
+    green:                       #9ece6a;
+    orange:                      #ff9e64;
+    purple:                      #bb9af7;
+    red:                         #f7768e;
+    yellow:                      #e0af68;
+    
+    /* Text colors */
+    text-selected:               #1a1b26;
     text-color:                  @foreground;
     border-color:                @selected;
 }
@@ -41,14 +53,15 @@ window {
     transparency:               "real";
     cursor:                     "default";
     spacing:                    0px;
-    border:                     5px;
-    border-radius:              30px;
+    border:                     2px;
+    border-radius:              15px;
     location:                   center;
     anchor:                     center;
 
     // Style Values
     width:                      50%;
-    background-color:           #2E3440;
+    background-color:           @background;
+    border-color:               @blue;
 }
 
 /* ----- Main Box ----- */
@@ -59,17 +72,17 @@ mainbox {
     background-color:            transparent;
 }
 
-
 /* ---- Inputbar ---- */
 inputbar {
     enabled:                     true;
-    padding:                     10px 10px 150px 10px;
-    margin:                      10px;
-    background-color:            transparent;
-    border-radius:               25px;
+    padding:                     15px 15px 20px 15px;
+    margin:                      15px;
+    background-color:            @background-alt;
+    border-radius:               12px;
     orientation:                 horizontal;
     children:                    ["entry", "dummy", "mode-switcher" ];
-    background-image:            url("~/.config/rofi/.current_wallpaper", width);
+    border:                      1px;
+    border-color:                @blue;
 }
 
 /* ---- Entry input ---- */
@@ -77,13 +90,15 @@ entry {
     enabled:                     true;
     expand:                      false;
     width:                       300px;
-    padding:                     10px;
-    border-radius:               12px;
+    padding:                     10px 15px;
+    border-radius:               8px;
     background-color:            @background;
-    text-color:                  inherit;
+    text-color:                  @foreground;
     cursor:                      text;
-    placeholder:                 "  Search "; // << Search symbol
-    placeholder-color:           inherit;
+    placeholder:                 "  Search ";
+    placeholder-color:           #565f89;
+    border:                      1px;
+    border-color:                #414868;
 }
 
 /* ---- Listbox ---- */
@@ -107,23 +122,22 @@ listview {
     reverse:                     false;
     fixed-height:                true;
     fixed-columns:               true;    
-    spacing:                     10px;
+    spacing:                     8px;
     padding:					 10px;
     background-color:            transparent;
-
-//  Adapt rofi theme
     border:                      0px;
 }
 
 /* ---- Scrollbar ---- */
 scrollbar {
   	border:						0px;
-  	border-radius:				10px;
-  	background-color:				transparent;
-  	handle-color: 				@active;
-  	handle-width: 				2px ;
+  	border-radius:				6px;
+  	background-color:			@background-alt;
+  	handle-color: 				@blue;
+  	handle-width: 				3px;
   	padding:      				0;
 }
+
 /* ---- Dummy ---- */
 dummy {
     expand:                      true;
@@ -133,105 +147,128 @@ dummy {
 /* ---- Mode Switcher ---- */
 mode-switcher{
     enabled:                     true;
-    spacing:                     10px;
+    spacing:                     8px;
     background-color:            transparent;
 }
+
 button {
-    width:                       5%;
-    padding:                     12px;
-    border-radius:               12px;
-    background-color:            #5E81AC;
-    text-color:                  inherit;
+    width:                       60px;
+    padding:                     8px 12px;
+    border-radius:               8px;
+    background-color:            @background-alt;
+    text-color:                  @foreground;
     cursor:                      pointer;
-}
-button selected {
-    background-color:            @active;
-    text-color:                  @text-selected;
+    border:                      1px;
+    border-color:                @blue;
 }
 
+button selected {
+    background-color:            @blue;
+    text-color:                  @text-selected;
+    border-color:                @blue;
+}
 
 /* ---- Elements ---- */
 element {
     enabled:                     true;
     spacing:                     10px;
-    padding:                     15px;
-    border-radius:               10px;
+    padding:                     12px;
+    border-radius:               8px;
     background-color:            transparent;
     cursor:                      pointer;
+    border:                      1px;
+    border-color:                transparent;
 }
 
 element normal.normal {
-    background-color:            inherit;
-    text-color:                  inherit;
-}
-element normal.urgent {
-    background-color:            #5E81AC;
+    background-color:            transparent;
     text-color:                  @foreground;
 }
 
-element-text selected,
+element normal.urgent {
+    background-color:            @background-alt;
+    text-color:                  @red;
+    border-color:                @red;
+}
+
 element normal.active {
-    background-color:            inherit;
-    text-color:                  @foreground;
+    background-color:            @background-alt;
+    text-color:                  @purple;
+    border-color:                @purple;
 }
 
 element selected.normal {
-    background-color:            @color11;
+    background-color:            @blue;
     text-color:                  @text-selected;
+    border-color:                @blue;
 }
+
 element selected.urgent {
-    background-color:            #5E81AC;
+    background-color:            @red;
     text-color:                  @text-selected;
+    border-color:                @red;
 }
+
 element selected.active {
-    background-color:            #5E81AC;
+    background-color:            @purple;
     text-color:                  @text-selected;
+    border-color:                @purple;
 }
-// Adapt rofi theme
+
 element alternate.normal {
     background-color:            transparent;
-    text-color:                  inherit;
+    text-color:                  @foreground;
 }
+
 element alternate.urgent {
     background-color:            transparent;
-    text-color:                  inherit;
+    text-color:                  @red;
 }
+
 element alternate.active {
     background-color:            transparent;
-    text-color:                  inherit;
+    text-color:                  @purple;
 }
+
 element-icon {
     background-color:            transparent;
     text-color:                  inherit;
-    size:                        36px;
+    size:                        32px;
     cursor:                      inherit;
 }
+
 element-text {
     background-color:            transparent;
     text-color:                  inherit;
     cursor:                      inherit;
     vertical-align:              0.5;
     horizontal-align:            0.0;
-
 }
 
 /* ---- Message ---- */
 message {
-    background-color:            @background;
-    border:                      0px;
+    background-color:            @background-alt;
+    border:                      1px;
+    border-color:                @blue;
+    border-radius:               8px;
+    margin:                      5px;
 }
+
 textbox {
-	margin:						 10px;
+	margin:						 0px;
     padding:                     12px;
-    border-radius:               10px;
-    background-color:            @active;
+    border-radius:               8px;
+    background-color:            transparent;
     text-color:                  @foreground;
     vertical-align:              0.5;
     horizontal-align:            0.5;
 }
+
 error-message {
     padding:                     12px;
-    border-radius:               20px;
-    background-color:            @background;
-    text-color:                  @foreground;
+    border-radius:               8px;
+    background-color:            @background-alt;
+    text-color:                  @red;
+    border:                      1px;
+    border-color:                @red;
 }
