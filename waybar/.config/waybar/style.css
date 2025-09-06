@@ -1,142 +1,135 @@
 * {
-    font-family: FiraCode Nerd Font;
-    font-size: 12px;
-    font-weight: 500;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    font-family: JetBrainsMono Nerd Font;
+    font-size: 13px;
 }
 
 window#waybar {
-    background-color: #2e3440;
-    color: #e5e9f0;
+    background-color: #1a1b26;
+    opacity: 1;
     transition-property: background-color;
     transition-duration: 0.5s;
 }
 
-#window {
-    padding: 0 10px;
-    background-color: #3b4252;
-    border-radius: 40px;
-}
-
-button {
-    box-shadow: inset 0 -3px transparent;
-    border: none;
-    border-radius: 0;
-}
-
-button:hover {
-    background: inherit;
+window#waybar.hidden {
+    opacity: 0.5;
 }
 
 #workspaces {
-    background-color: #3b4252;
-    border-radius: 40px;
-}
-#workspaces button {
     background-color: transparent;
-    color: #e5e9f0;
-    border-radius: 50%;
 }
-#workspaces button:hover,
+
+#workspaces button {
+    all: initial;
+    /* Remove GTK theme values (waybar #1351) */
+    min-width: 0;
+    /* Fix weird spacing in materia (waybar #450) */
+    box-shadow: inset 0 -3px transparent;
+    /* Use box-shadow instead of border so the text isn't offset */
+    padding: 6px 18px;
+    margin: 6px 3px;
+    border-radius: 4px;
+    background-color: #24283b;
+    color: #c0caf5;
+}
+
 #workspaces button.active {
-    background-color: #5e81ac;
+    color: #1a1b26;
+    background-color: #7aa2f7;
+}
+
+#workspaces button:hover {
+    box-shadow: inherit;
+    text-shadow: inherit;
+    color: #1a1b26;
+    background-color: #7aa2f7;
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+    background-color: #f7768e;
+    color: #1a1b26;
 }
 
-#clock,
+#memory,
+#custom-power,
 #battery,
+#backlight,
+#wireplumber,
 #network,
-#pulseaudio,
-#tray,
-#language,
-#bluetooth,
-#mpris,
-#custom-notification {
-    padding: 0 10px;
-    color: #eee;
-}
-
-#window,
-#workspaces {
-    margin: 0 4px;
-}
-
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
-}
-
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
-}
-
+#clock,
 #tray {
-    border-radius: 40px;
-    background-color: #3b4252;
+    border-radius: 4px;
+    margin: 6px 3px;
+    padding: 6px 12px;
+    background-color: #24283b;
+    color: #1a1b26;
 }
 
-#network,
-#bluetooth {
-    background-color: #3b4252;
+#custom-power {
+    margin-right: 6px;
 }
 
-#network {
-    border-radius: 0 40px 40px 0;
+#custom-logo {
+    padding-right: 7px;
+    padding-left: 7px;
+    margin-left: 5px;
+    font-size: 15px;
+    border-radius: 8px 0px 0px 8px;
+    color: #7aa2f7;
 }
 
-#bluetooth {
-    border-radius: 40px 0 0 40px;
-}
-
-#clock {
-    background-color: #3b4252;
-    border-radius: 40px;
+#memory {
+    background-color: #e0af68;
 }
 
 #battery {
-    background-color: #3b4252;
-    border-radius: 40px;
+    background-color: #9ece6a;
+}
+
+#battery.warning,
+#battery.critical,
+#battery.urgent {
+    background-color: #f7768e;
+    color: #1a1b26;
 }
 
 #battery.charging {
-    color: rgb(0, 233, 0);
+    background-color: #9ece6a;
+    color: #1a1b26;
 }
 
-#language {
-    background-color: #3b4252;
-    border-radius: 40px;
+#backlight {
+    background-color: #e0af68;
 }
 
-#pulseaudio {
-    background-color: #3b4252;
-    border-radius: 40px;
+#wireplumber {
+    background-color: #e0af68;
 }
 
-#pulseaudio.muted {
-    color: #777;
+#network {
+    background-color: #73daca;
+    padding-right: 17px;
 }
 
-#mpris {
-    background-color: transparent;
-    border-radius: 30px;
+#clock {
+    font-family: JetBrainsMono Nerd Font;
+    background-color: #bb9af7;
 }
 
-#mpris.playing {
-    background-color: #3b4252;
+#custom-power {
+    background-color: #f7768e;
 }
 
-#mpris.paused {
-    background-color: #3b4252;
+tooltip {
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #1a1b26;
 }
 
-#mpris.stopped {
-    background-color: #3b4252;
-}
-
-#custom-notification {
-    background-color: #3b4252;
-    border-radius: 30px;
+tooltip label {
+    padding: 5px;
+    background-color: #1a1b26;
+    color: #c0caf5;
 }
