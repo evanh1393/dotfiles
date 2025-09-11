@@ -3,7 +3,7 @@ if status is-interactive
 end
 
 function nixedit
-  sudo nvim /etc/nixos/configuration.nix
+    sudo nvim /etc/nixos/configuration.nix
 end
 
 # Initialize Starship prompt
@@ -25,4 +25,9 @@ function workon
     else
         echo "No virtual environment found at $argv[1]"
     end
+end
+
+# My Aliases
+function llc
+    ll | bat -l conf -p
 end
