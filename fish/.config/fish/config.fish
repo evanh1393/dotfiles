@@ -27,6 +27,11 @@ function workon
     end
 end
 
+# Zoxide initialization
+if type -q zoxide
+    zoxide init fish | source
+end
+
 # My Aliases
 function llc
     ll | bat -l conf -p
