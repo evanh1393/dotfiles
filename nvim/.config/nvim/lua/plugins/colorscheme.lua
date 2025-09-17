@@ -10,7 +10,7 @@ return {
       vim.g.everforest_better_performance = 1
       vim.g.everforest_enable_italic = 1
       vim.g.everforest_disable_italic_comment = 0
-      vim.g.everforest_transparent_background = 0 -- Set to 1 for transparent background
+      vim.g.everforest_transparent_background = 1 -- Set to 1 for transparent background
       vim.g.everforest_current_word = "grey background"
 
       -- Set the colorscheme
