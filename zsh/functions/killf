@@ -1,0 +1,16 @@
+# Wrapper: allow "kill -f <pattern>" like pkill -f
+
+kill() {
+  if [ "$1" = "-f" ]; then
+    shift
+    if [ $# -eq 0 ]; then
+      echo "usage: kill -f <pattern>" >&2
+      return 2
+    fi
+    pgrep -a -f "$@" || true
+    pkill -f "$@" && return 0
+  else
+    command kill "$@"
+  fi
+}
+

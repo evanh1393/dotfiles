@@ -1,0 +1,4 @@
+# Custom aliases
+alias ll='ls -lah --color=auto'
+alias killf='pkill -f'
+
