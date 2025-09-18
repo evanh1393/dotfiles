@@ -1,3 +1,6 @@
+# Load personal functions
+fpath=(~/dotfiles/zsh/functions $fpath)
+
 eval "$(starship init zsh)"
 
 eval "$(zoxide init zsh)"
@@ -10,4 +13,8 @@ export PATH="$HOME/.local/bin:$PATH"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-export PATH=$HOME/.cargo/bin
+export PATH="$HOME/.cargo/bin:$PATH"
+
+if [ -f ~/.zsh_aliases ]; then
+    source ~/.zsh_aliases
+fi
