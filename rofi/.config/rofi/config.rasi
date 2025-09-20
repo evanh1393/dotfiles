@@ -1,274 +1,126 @@
-/* ---- 💫 Tokyo Night Rofi Theme 💫 ---- */
-/* Based on KooL Hyprland Rofi Style 6 */
-
-/* ---- Configuration ---- */
-
 configuration {
-	modi:                       "drun,run,filebrowser";
-    show-icons:                 true;
-    display-drun:               "  apps";
-    display-run:                "  term";
-    display-filebrowser:        "  files";
-    display-window:             "  window";
-	drun-display-format:        "{name}";
-	hover-select:               true;
-	me-select-entry:            "MouseSecondary";
-    me-accept-entry:            "MousePrimary";
-	window-format:              "{w} · {c} · {t}";
+  display-window: "windows";
+  show-icons: true;
 }
 
-/* ---- Load wallust colors ---- */
-@theme "~/.config/rofi/wallust/colors-rofi.rasi"
-
-/* ---- Global Properties - Tokyo Night Colors ---- */
 * {
-    /* Tokyo Night Color Palette */
-    background:                  #1a1b26;
-    background-alt:              #24283b;
-    foreground:                  #c0caf5;
-    selected:                    #7aa2f7;
-    active:                      #bb9af7;
-    urgent:                      #f7768e;
-    
-    /* Accent colors */
-    blue:                        #7aa2f7;
-    cyan:                        #7dcfff;
-    green:                       #9ece6a;
-    orange:                      #ff9e64;
-    purple:                      #bb9af7;
-    red:                         #f7768e;
-    yellow:                      #e0af68;
-    
-    /* Text colors */
-    text-selected:               #1a1b26;
-    text-color:                  @foreground;
-    border-color:                @selected;
+  font: "JetBrains Mono Nerd Font Medium 15";
+  bg0: #2b3339;
+  bg1: #323d43;
+  bg2: #2d1e23;
+  fg0: #D3C6AA;
+  accent-color: #A7C080;
+  urgent-color: #DBBC7F;
+  background-color: transparent;
+  text-color: @fg0;
+  margin: 0;
+  padding: 0;
+  spacing: 0;
+  background-green: #3C4841;
+  everforest-bg: rgba(43, 51, 57, 0.7);
+  everforest-selected: rgba(167, 192, 128, 0.3);
 }
 
-/* ---- Window ---- */
 window {
-    // Default
-    enabled:                    true;
-    fullscreen:                 false;
-    transparency:               "real";
-    cursor:                     "default";
-    spacing:                    0px;
-    border:                     2px;
-    border-radius:              15px;
-    location:                   center;
-    anchor:                     center;
-
-    // Style Values
-    width:                      50%;
-    background-color:           @background;
-    border-color:               @blue;
+  background-color: @bg0;
 }
 
-/* ----- Main Box ----- */
 mainbox {
-    enabled:                     true;
-    orientation:                 vertical;
-    children:                    [ "inputbar", "listbox" ];
-    background-color:            transparent;
+  background-color: @bg0;
+  children: [ message, inputbar, listview ];
 }
 
-/* ---- Inputbar ---- */
-inputbar {
-    enabled:                     true;
-    padding:                     15px 15px 20px 15px;
-    margin:                      15px;
-    background-color:            @background-alt;
-    border-radius:               12px;
-    orientation:                 horizontal;
-    children:                    ["entry", "dummy", "mode-switcher" ];
-    border:                      1px;
-    border-color:                @blue;
+message {
+  background-color: @bg1;
+  padding: 20px;
+  margin: 0px 0px 10px 0px;
+  border: 0px;
 }
 
-/* ---- Entry input ---- */
-entry {
-    enabled:                     true;
-    expand:                      false;
-    width:                       300px;
-    padding:                     10px 15px;
-    border-radius:               8px;
-    background-color:            @background;
-    text-color:                  @foreground;
-    cursor:                      text;
-    placeholder:                 "  Search ";
-    placeholder-color:           #565f89;
-    border:                      1px;
-    border-color:                #414868;
-}
-
-/* ---- Listbox ---- */
-listbox {
-    spacing:                     10px;
-    padding:                     10px;
-    background-color:            transparent;
-    orientation:                 vertical;
-    children:                    [ "message", "listview" ];
-}
-
-/* ---- Listview ---- */
 listview {
-    enabled:                     true;
-    columns:                     2;
-    lines:                       6;
-    cycle:                       true;
-    dynamic:                     true;
-    scrollbar:                   false;
-    layout:                      vertical;
-    reverse:                     false;
-    fixed-height:                true;
-    fixed-columns:               true;    
-    spacing:                     8px;
-    padding:					 10px;
-    background-color:            transparent;
-    border:                      0px;
+  enabled: true;
+  columns: 1;
+  lines: 7;
+  cycle: true;
+  dynamic: true;
+  scrollbar: false;
+  layout: vertical;
+  reverse: false;
+  fixed-height: true;
+  fixed-columns: true;
+  spacing: 8px;
+  background-color: transparent;
+  text-color: @fg0;
+  cursor: "default";
 }
 
-/* ---- Scrollbar ---- */
-scrollbar {
-  	border:						0px;
-  	border-radius:				6px;
-  	background-color:			@background-alt;
-  	handle-color: 				@blue;
-  	handle-width: 				3px;
-  	padding:      				0;
+prompt {
+  enabled: false;
 }
 
-/* ---- Dummy ---- */
-dummy {
-    expand:                      true;
-    background-color:            transparent;
+case-indicator {
+  enabled: false;
 }
 
-/* ---- Mode Switcher ---- */
-mode-switcher{
-    enabled:                     true;
-    spacing:                     8px;
-    background-color:            transparent;
+num-filtered-rows {
+  enabled: false;
 }
 
-button {
-    width:                       60px;
-    padding:                     8px 12px;
-    border-radius:               8px;
-    background-color:            @background-alt;
-    text-color:                  @foreground;
-    cursor:                      pointer;
-    border:                      1px;
-    border-color:                @blue;
+num-rows {
+  enabled: false;
 }
 
-button selected {
-    background-color:            @blue;
-    text-color:                  @text-selected;
-    border-color:                @blue;
+entry {
+  enabled: true;
+  expand: true;
+  width: 400px;
+  padding: 12px 16px;
+  border-radius: 100%;
+  background-color: #cfd2cd;
+  text-color: @background-green;
+  cursor: text;
+  placeholder: "Search";
+  placeholder-color: inherit;
 }
 
-/* ---- Elements ---- */
+inputbar {
+  background-color: @bg1;
+  text-color: @fg0;
+  padding: 80px 60px;
+  background-image: url("/home/evanh/dotfiles/rofi/.config/rofi/anime_woods.jpg");
+  children: [ entry ];
+}
+
 element {
-    enabled:                     true;
-    spacing:                     10px;
-    padding:                     12px;
-    border-radius:               8px;
-    background-color:            transparent;
-    cursor:                      pointer;
-    border:                      1px;
-    border-color:                transparent;
+  padding: 12px 16px;
+  margin: 0px 8px;
+  background-color: @everforest-bg;
+  border-radius: 12px;
+  text-color: @fg0;
 }
 
-element normal.normal {
-    background-color:            transparent;
-    text-color:                  @foreground;
+element normal normal {
+  background-color: @everforest-bg;
+  text-color: @fg0;
 }
 
-element normal.urgent {
-    background-color:            @background-alt;
-    text-color:                  @red;
-    border-color:                @red;
+element selected normal {
+  background-color: @everforest-selected;
+  text-color: @accent-color;
 }
 
-element normal.active {
-    background-color:            @background-alt;
-    text-color:                  @purple;
-    border-color:                @purple;
-}
-
-element selected.normal {
-    background-color:            @blue;
-    text-color:                  @text-selected;
-    border-color:                @blue;
-}
-
-element selected.urgent {
-    background-color:            @red;
-    text-color:                  @text-selected;
-    border-color:                @red;
-}
-
-element selected.active {
-    background-color:            @purple;
-    text-color:                  @text-selected;
-    border-color:                @purple;
-}
-
-element alternate.normal {
-    background-color:            transparent;
-    text-color:                  @foreground;
-}
-
-element alternate.urgent {
-    background-color:            transparent;
-    text-color:                  @red;
-}
-
-element alternate.active {
-    background-color:            transparent;
-    text-color:                  @purple;
-}
-
-element-icon {
-    background-color:            transparent;
-    text-color:                  inherit;
-    size:                        32px;
-    cursor:                      inherit;
+element alternate normal {
+  background-color: rgba(50, 61, 67, 0.5);
+  text-color: @fg0;
 }
 
 element-text {
-    background-color:            transparent;
-    text-color:                  inherit;
-    cursor:                      inherit;
-    vertical-align:              0.5;
-    horizontal-align:            0.0;
+  vertical-align: 0.5;
+  background-color: transparent;
+  text-color: inherit;
 }
 
-/* ---- Message ---- */
-message {
-    background-color:            @background-alt;
-    border:                      1px;
-    border-color:                @blue;
-    border-radius:               8px;
-    margin:                      5px;
-}
-
-textbox {
-	margin:						 0px;
-    padding:                     12px;
-    border-radius:               8px;
-    background-color:            transparent;
-    text-color:                  @foreground;
-    vertical-align:              0.5;
-    horizontal-align:            0.5;
-}
-
-error-message {
-    padding:                     12px;
-    border-radius:               8px;
-    background-color:            @background-alt;
-    text-color:                  @red;
-    border:                      1px;
-    border-color:                @red;
+element-icon {
+  size: 2em;
+  background-color: transparent;
 }
