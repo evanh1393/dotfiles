@@ -9,6 +9,7 @@ return {
       "black",
       "bash-language-server",
       "blade-formatter",
+      "codelldb",
       "docker-compose-language-service",
       "dockerfile-language-server",
       "dot-language-server",

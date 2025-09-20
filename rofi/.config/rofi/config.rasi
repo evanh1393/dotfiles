@@ -4,7 +4,7 @@ configuration {
 }
 
 * {
-  font: "JetBrains Mono Nerd Font Medium 15";
+  font: "JetBrains Mono Nerd Font 15";
   bg0: #2b3339;
   bg1: #323d43;
   bg2: #2d1e23;
