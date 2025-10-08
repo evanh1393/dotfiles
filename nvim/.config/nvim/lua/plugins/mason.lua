@@ -16,9 +16,10 @@ return {
       "emmet-ls",
       "eslint_d",
       "flake8",
+      "gopls", -- Go language server
       "hadolint",
       "html-lsp",
-      "intelephense",
+      "intelephense", -- Added from the second config
       "nginx-language-server",
       "php-debug-adapter",
       "phpstan",
